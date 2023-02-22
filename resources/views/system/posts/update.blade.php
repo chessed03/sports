@@ -83,7 +83,7 @@
                                         <div class="input-group">
 
                                             <label class="input-group-btn">
-                                                <span class="btn btn-primary btn-file elevation-2" onchange="uploadImage()" data-action="btn-upload" data-input-url="image_feature_url" data-preview-image="image_feature_preview">
+                                                <span class="btn btn-primary btn-file elevation-2 btnFileImage" onchange="uploadImage()" data-action="btn-upload" data-input-url="image_feature_url" data-preview-image="image_feature_preview">
                                                     <i class='bx bx-fw bx-cloud-upload btn-upload'></i> Cargar imagen <input accept=".jpg,.png,.jpeg,.gif" class="hidden" name="upload_image" type="file" id="upload_image">
                                                 </span>
                                             </label>
@@ -158,7 +158,7 @@
 
     <script>
 
-        let url_upload_image = '{{ route("image-upload-image") }}';
+        let url_upload_image = '{{ route("multimedia-upload-image") }}';
 
         let token            = '{{ csrf_token() }}';
 
