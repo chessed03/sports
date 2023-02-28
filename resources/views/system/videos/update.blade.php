@@ -59,64 +59,120 @@
 
                                 <div class="row">
 
-                                    <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 form-group">
-                                        <label for="title">Titulo:</label>
-                                        <input type="text" name="title" id="title" class="form-control @error('title') is-invalid @enderror" value="{{ $item->title }}">
-                                        @error('title')<span class="invalid-feedback" role="alert"> <strong>{{ $message }}</strong></span>@enderror
-                                    </div>
+                                    <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
 
-                                    <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 form-group">
-                                        <label for="subtitle">Subtitulo:</label>
-                                        <input type="text" name="subtitle" id="subtitle" class="form-control @error('subtitle') is-invalid @enderror" value="{{ $item->subtitle }}">
-                                        @error('subtitle')<span class="invalid-feedback" role="alert"> <strong>{{ $message }}</strong></span>@enderror
-                                    </div>
+                                        <div class="row">
 
-                                    <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 form-group">
-                                        <label for="description">Descripción:</label>
-                                        <input type="text" name="description" id="description" class="form-control @error('description') is-invalid @enderror" value="{{ $item->description }}">
-                                        @error('description')<span class="invalid-feedback" role="alert"> <strong>{{ $message }}</strong></span>@enderror
-                                    </div>
+                                            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 form-group">
+                                                <label for="title">Titulo:</label>
+                                                <input type="text" name="title" id="title" class="form-control @error('title') is-invalid @enderror" value="{{ $item->title }}">
+                                                @error('title')<span class="invalid-feedback" role="alert"> <strong>{{ $message }}</strong></span>@enderror
+                                            </div>
 
-                                    <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 form-group">
+                                            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 form-group">
+                                                <label for="subtitle">Subtitulo:</label>
+                                                <input type="text" name="subtitle" id="subtitle" class="form-control @error('subtitle') is-invalid @enderror" value="{{ $item->subtitle }}">
+                                                @error('subtitle')<span class="invalid-feedback" role="alert"> <strong>{{ $message }}</strong></span>@enderror
+                                            </div>
 
-                                        <label>Video</label>
-                                        <div class="input-group">
+                                            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 form-group">
+                                                <label for="description">Descripción:</label>
+                                                <input type="text" name="description" id="description" class="form-control @error('description') is-invalid @enderror" value="{{ $item->description }}">
+                                                @error('description')<span class="invalid-feedback" role="alert"> <strong>{{ $message }}</strong></span>@enderror
+                                            </div>
 
-                                            <label class="input-group-btn">
-                                                <span class="btn btn-primary btn-file elevation-2" onchange="uploadVideo()" data-action="btn-upload" data-input-url="video_url" data-preview-video="video_preview">
-                                                    <i class='bx bx-fw bx-cloud-upload btn-upload'></i> Cargar video <input class="hidden" name="upload_video" type="file" id="upload_video">
-                                                </span>
-                                            </label>
-                                            &nbsp;&nbsp;
-                                            <input class="form-control @error('video_url') is-invalid @enderror" name="video_url" readonly="readonly" id="video_url" type="text" value="{{ $item->video_url }}">
+                                            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 form-group">
 
-                                            @error('video_url')<span class="invalid-feedback" role="alert"> <strong>{{ $message }}</strong></span>@enderror
+                                                <label>Video</label>
+                                                <div class="input-group">
+
+                                                    <label class="input-group-btn">
+                                                        <span class="btn btn-primary btn-file elevation-2 btnFileVideo" onchange="uploadVideo()" data-action="btn-upload" data-input-url="video_url" data-preview-video="video_preview">
+                                                            <i class='bx bx-fw bx-cloud-upload btn-upload'></i> Cargar video <input class="hidden" name="upload_video" type="file" id="upload_video">
+                                                        </span>
+                                                    </label>
+                                                    &nbsp;&nbsp;
+                                                    <input class="form-control @error('video_url') is-invalid @enderror" name="video_url" readonly="readonly" id="video_url" type="text" value="{{ $item->video_url }}">
+
+                                                    @error('video_url')<span class="invalid-feedback" role="alert"> <strong>{{ $message }}</strong></span>@enderror
+                                                </div>
+
+                                            </div>
+
+                                            {{--<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+
+                                                <div class="row">
+
+                                                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 form-group">
+
+                                                        <label for="video_preview">Previsualización del video:</label>
+                                                        <div class="embed-responsive embed-responsive-16by9">
+                                                            <iframe class="embed-responsive-item" src="" id="video_preview" allowfullscreen></iframe>
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+
+                                            </div>--}}
+
                                         </div>
 
                                     </div>
 
-                                    {{--<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                                    <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
 
                                         <div class="row">
 
                                             <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 form-group">
 
-                                                <label for="video_preview">Previsualización del video:</label>
-                                                <div class="embed-responsive embed-responsive-16by9">
-                                                    <iframe class="embed-responsive-item" src="{{ $item->video_url }}" id="video_preview" allowfullscreen></iframe>
+                                                <label>Imágen</label>
+
+                                                <div class="input-group">
+
+                                                    <label class="input-group-btn">
+                                                        <span class="btn btn-primary btn-file elevation-2 btnFileImage" onchange="uploadImage()" data-action="btn-upload" data-input-url="image_url" data-preview-image="image_preview">
+                                                            <i class='bx bx-fw bx-cloud-upload btn-upload'></i> Cargar imagen <input accept=".jpg,.png,.jpeg,.gif" class="hidden" name="upload_image" type="file" id="upload_image">
+                                                        </span>
+                                                    </label>
+                                                    &nbsp;&nbsp;
+                                                    <input class="form-control @error('image_url') is-invalid @enderror" name="image_url" readonly="readonly" id="image_url" type="text" value="{{ $item->image_url }}">
+
+                                                    @error('image_url')<span class="invalid-feedback" role="alert"> <strong>{{ $message }}</strong></span>@enderror
+                                                </div>
+
+                                            </div>
+
+                                            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+
+                                                <div class="row">
+
+                                                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 form-group">
+
+                                                        <label for="image_preview">Previsualización de imágen:</label>
+
+                                                        <img
+                                                            src="{{ $item->image_url }}"
+                                                            id="image_preview"
+                                                            class="w-100 shadow-1-strong rounded mb-4"
+                                                            height="340px"
+                                                        />
+
+                                                    </div>
+
                                                 </div>
 
                                             </div>
 
                                         </div>
 
-                                    </div>--}}
+                                    </div>
 
                                     <div class="col-12 text-right mt-4">
 
                                         <a href="{{ route('video-index') }}">
                                             <button type="button" class="btn btn-danger elevation-2 mr-4">
-                                                <i class="bx bx-fw bx-x-circle"></i> Cancelar
+                                                <i class="bx-fw bx bx-x-circle"></i> Cancelar
                                             </button>
                                         </a>
 
