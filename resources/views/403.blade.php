@@ -5,7 +5,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8 mt-5">
                 <div class="card">
-                    <div class="card-header">Área no autorizada</div>
+                    <div class="card-header">Área no autorizada.</div>
 
                     <div class="card-body">
 
